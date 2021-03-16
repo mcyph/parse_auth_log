@@ -9,7 +9,7 @@ import PublicIcon from '@material-ui/icons/Public';
 import PhotoSizeSelectSmallIcon from '@material-ui/icons/PhotoSizeSelectSmall';
 
 import './App.css';
-import { World, StatesProvinces, Countries } from "./pages";
+import { World, StatesProvinces, Countries, ByDates, ByHour, ByUser } from "./pages";
 
 function App() {
   // Get the current page element based on the selected tab
@@ -19,7 +19,8 @@ function App() {
   return <>
       <div style={{
         minHeight: "100vh",
-        paddingBottom: "50px"
+        paddingBottom: "50px",
+        fontFamily: "monospace"
       }}>
         <h1 style={{
           textAlign: "center",
@@ -27,9 +28,12 @@ function App() {
           paddingBottom: "20px",
           margin: 0
         }}>
-          <s>L33t HaXiN4</s> Login Attempts
+          L337 HaX0r Logins
         </h1>
-        <Countries name="Number Attempts Per Country" />
+        <Countries />
+        <ByDates />
+        <ByHour />
+        <ByUser />
       </div>
   </>;
 }

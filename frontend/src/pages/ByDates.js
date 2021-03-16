@@ -1,3 +1,4 @@
+import * as dfd from "danfojs/src/index";
 import React from "react";
 
 import CovidData from "../data/AuthLogData";
@@ -6,7 +7,7 @@ import { CircularProgress } from "@material-ui/core";
 import flagData from "../data/flagData";
 import utilityFns from "./utilityFns";
 
-class Countries extends React.Component {
+class ByDates extends React.Component {
   state = {}
 
   /**
@@ -21,25 +22,20 @@ class Countries extends React.Component {
       // Load the data in the background
       this.setState({ "dfLoading": true });
 
+
       CovidData.getLoginEvents().then(df => {
-
-        // Set the country flag icon properties here
-        // so we don't have to do it each time in render()
-        let richProps = this.__richProps = {};
-        const REPLACE_RE = /[ '(),-]/g;
-
-        for (let iso2 in flagData) {
-          richProps[iso2] = {
-            width: 24,
-            height: 24,
-            align: 'center',
-            backgroundColor: {
-              image: "data:image/png;base64," + flagData[iso2]
-            }
-          };
-        }
-
-
+        df.addColumn({
+          column: "date",
+          value: df['eventdatetime'].values.map(item => {return item.split('T')[0]})
+        });
+        df.addColumn({
+          column: "hour",
+          value: df['eventdatetime'].values.map(item => {return parseInt(item.split('T')[1].split(':')[0])})
+        });
+        //df['eventdatetime'] = dfd.to_datetime({
+        //  data: df['eventdatetime'],
+        //  format:"%Y-%m-%dT%H:%M:%S"
+        //});
         // Update the UI
         this.setState({ "df": df });
       });
@@ -57,15 +53,17 @@ class Countries extends React.Component {
       // Otherwise show the bar chart
       let df = this.state.df;
 
-      let df2 = df.query({ "column": "type", "is": "==", "to": 2 })
-                  .groupby(["country_code"]).col(["country_code"]).count();
-      df2 = df2.sort_values({ "by": "country_code_count", "ascending": false })
-      let valuesOut1 = utilityFns.getTwoTuples(df2, "country_code", "country_code_count");
-
-      let df3 = df.query({ "column": "type", "is": "==", "to": 1 })
-                  .groupby(["country_code"]).col(["country_code"]).count();
-      df3 = df3.sort_values({ "by": "country_code_count", "ascending": false })
-      let valuesOut2 = utilityFns.getTwoTuples(df3, "country_code", "country_code_count");
+      // Danfo.js mangles dates :S
+      let count = {};
+      for (let [date,] of utilityFns.getTwoTuples(df, "date", "date")) {
+        count[date] = count[date] || 0;
+        count[date] += 1;
+      }
+      let out = [];
+      for (let date in count) {
+        out.push([date, count[date]]);
+      }
+      out.sort();
 
       return <>
         <BasicBarChart
@@ -87,12 +85,11 @@ class Countries extends React.Component {
             marginRight: "auto",
             maxWidth: "1000px"
           }}
-          data={ [["Successful attempts", valuesOut1, ""],
-                  ["Failed attempts", valuesOut2, "orange"]] }
+          data={ [["Attempts by Date", out, ""]] }
         />
       </>;
     }
   }
 }
 
-export default Countries;
+export default ByDates;

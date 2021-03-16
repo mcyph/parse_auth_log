@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7424145f-f603-42b0-acc2-3707ab522a87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ByDates.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ByHour.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ByUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/data/CovidData.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data/AuthLogData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/data/populationData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/data/populationData/worldbank_pop.csv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/data/populationData/worldbank_pop_metadata.csv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/data/AuthLogData.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data/AuthLogData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/BasicBarChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/BasicBarChart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/World.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615886202204</updated>
-      <workItem from="1615886203328" duration="2723000" />
+      <workItem from="1615886203328" duration="9496000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1615886300236</created>
@@ -65,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615887141279</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added use of dotenv and started visualization of countries">
+      <created>1615889001415</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615889001415</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,13 +81,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="cleanups and additions to run_server scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanups and additions to run_server scripts" />
+    <MESSAGE value="added use of dotenv and started visualization of countries" />
+    <option name="LAST_COMMIT_MESSAGE" value="added use of dotenv and started visualization of countries" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1022" y="373" key="CommitChangelistDialog2" timestamp="1615887140180">
+    <state x="1022" y="373" key="CommitChangelistDialog2" timestamp="1615889000154">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="1022" y="373" key="CommitChangelistDialog2/0.0.3440.1440@0.0.3440.1440" timestamp="1615887140180" />
+    <state x="1022" y="373" key="CommitChangelistDialog2/0.0.3440.1440@0.0.3440.1440" timestamp="1615889000154" />
     <state x="1210" y="507" key="RollbackChangesDialog" timestamp="1615886277485">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
@@ -89,9 +97,9 @@
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
     <state x="885" y="377" key="SettingsEditor/0.0.3440.1440@0.0.3440.1440" timestamp="1615888746558" />
-    <state x="976" y="465" key="Vcs.Push.Dialog.v2" timestamp="1615887142523">
+    <state x="976" y="465" key="Vcs.Push.Dialog.v2" timestamp="1615889002538">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="976" y="465" key="Vcs.Push.Dialog.v2/0.0.3440.1440@0.0.3440.1440" timestamp="1615887142523" />
+    <state x="976" y="465" key="Vcs.Push.Dialog.v2/0.0.3440.1440@0.0.3440.1440" timestamp="1615889002538" />
   </component>
 </project>

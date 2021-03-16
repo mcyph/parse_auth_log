@@ -1,3 +1,4 @@
+import * as dfd from "danfojs/src/index";
 import React from "react";
 
 import CovidData from "../data/AuthLogData";
@@ -6,7 +7,7 @@ import { CircularProgress } from "@material-ui/core";
 import flagData from "../data/flagData";
 import utilityFns from "./utilityFns";
 
-class Countries extends React.Component {
+class ByUser extends React.Component {
   state = {}
 
   /**
@@ -22,24 +23,6 @@ class Countries extends React.Component {
       this.setState({ "dfLoading": true });
 
       CovidData.getLoginEvents().then(df => {
-
-        // Set the country flag icon properties here
-        // so we don't have to do it each time in render()
-        let richProps = this.__richProps = {};
-        const REPLACE_RE = /[ '(),-]/g;
-
-        for (let iso2 in flagData) {
-          richProps[iso2] = {
-            width: 24,
-            height: 24,
-            align: 'center',
-            backgroundColor: {
-              image: "data:image/png;base64," + flagData[iso2]
-            }
-          };
-        }
-
-
         // Update the UI
         this.setState({ "df": df });
       });
@@ -57,15 +40,9 @@ class Countries extends React.Component {
       // Otherwise show the bar chart
       let df = this.state.df;
 
-      let df2 = df.query({ "column": "type", "is": "==", "to": 2 })
-                  .groupby(["country_code"]).col(["country_code"]).count();
-      df2 = df2.sort_values({ "by": "country_code_count", "ascending": false })
-      let valuesOut1 = utilityFns.getTwoTuples(df2, "country_code", "country_code_count");
-
-      let df3 = df.query({ "column": "type", "is": "==", "to": 1 })
-                  .groupby(["country_code"]).col(["country_code"]).count();
-      df3 = df3.sort_values({ "by": "country_code_count", "ascending": false })
-      let valuesOut2 = utilityFns.getTwoTuples(df3, "country_code", "country_code_count");
+      let df2 = df.groupby(["username"]).col(["username"]).count();
+      df2 = df2.sort_values({ "by": "username_count", "ascending": false })
+      let valuesOut1 = utilityFns.getTwoTuples(df2, "username", "username_count");
 
       return <>
         <BasicBarChart
@@ -80,6 +57,20 @@ class Countries extends React.Component {
             left: "90px",
             right: "30px"
           }}
+          dataZoom={[
+            {
+              show: true,
+              type: "slider",
+              moveHandleSize: 20,
+              moveHandleStyle: {
+                opacity: 0.3
+              },
+              start: 0,
+              end: utilityFns.isMobile() ? 2 : 2
+            }, {
+              type: "inside"
+            }
+          ]}
           style={{
             height: utilityFns.isMobile() ? "calc(66vh)" : "calc(50vh - 33px)",
             marginTop: "25px",
@@ -87,12 +78,11 @@ class Countries extends React.Component {
             marginRight: "auto",
             maxWidth: "1000px"
           }}
-          data={ [["Successful attempts", valuesOut1, ""],
-                  ["Failed attempts", valuesOut2, "orange"]] }
+          data={ [["Attempts by Username", valuesOut1, ""]] }
         />
       </>;
     }
   }
 }
 
-export default Countries;
+export default ByUser;
