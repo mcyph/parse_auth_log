@@ -1,1 +1,1 @@
-uvicorn api:app --reload
+uvicorn api:app --reload --host localhost --port 9779

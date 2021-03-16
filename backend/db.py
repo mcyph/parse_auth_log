@@ -8,6 +8,11 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime, Index
 Base = declarative_base()
 
 
+#=======================================================================#
+# Login Events
+#=======================================================================#
+
+
 class LoginEventTypes(enum.Enum):
     FAILURE = 1
     SUCCESS = 2
@@ -33,6 +38,11 @@ Index('login_events_idx',
       LoginEvents.type,
       LoginEvents.ip,
       LoginEvents.username)
+
+
+#=======================================================================#
+# Other Event Types
+#=======================================================================#
 
 
 class OtherEventTypes(enum.Enum):
