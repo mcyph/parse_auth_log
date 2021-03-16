@@ -1,0 +1,7 @@
+mysql-connector-python
+python-geoip
+python-geoip-geolite2
+python-dateutil
+fastapi
+sqlalchemy
+uvicorn
