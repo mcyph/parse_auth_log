@@ -1,6 +1,6 @@
 import React from "react";
 
-import CovidData from "../data/CovidData";
+import CovidData from "../data/AuthLogData";
 import BasicBarChart from "./BasicBarChart";
 import { CircularProgress } from "@material-ui/core";
 import flagData from "../data/flagData";
@@ -10,36 +10,27 @@ class Countries extends React.Component {
   state = {}
 
   /**
-   * A single chart (one of confirmed/recovered/deaths)
-   * displaying stats on a country (admin 0) level
    *
-   * @param name the printable name, e.g. "Confirmed"
-   * @param apiKey the api endpoint name, e.g. "confirmed"
+   * @param name the printable name
    * @param color the color of the bar chart items
-   * @param per100k whether to display per 100k inhabitants
-   *                (per capita values)
    */
-  constructor({ name, apiKey, color, per100k }) {
-    super({ name, apiKey, color, per100k });
+  constructor({ name, color }) {
+    super({ name, color });
 
     if (!this.state.dfLoading) {
       // Load the data in the background
       this.setState({ "dfLoading": true });
 
-      CovidData.getDetailedStats(apiKey).then(df => {
+      CovidData.getLoginEvents().then(df => {
 
         // Set the country flag icon properties here
         // so we don't have to do it each time in render()
         let richProps = this.__richProps = {};
         const REPLACE_RE = /[ '(),-]/g;
-        let countryRegionValues = df['countryRegion'].values
-        let iso2Values = df['iso2'].values;
+        let countryRegionValues = df['country_code'].values
 
-        for (let x=0; x<countryRegionValues.length; x++) {
-          let countryRegion = countryRegionValues[x];
-          let iso2 = iso2Values[x];
-
-          richProps[countryRegion.replace(REPLACE_RE, '_')] = {
+        for (let iso2 in flagData) {
+          richProps[iso2] = {
             width: 24,
             height: 24,
             align: 'center',
@@ -48,12 +39,6 @@ class Countries extends React.Component {
             }
           };
         }
-
-        // We're only interested in some of the properties at any
-        // one time, so reduce to only those to increase performance
-        df = utilityFns.reduceToOnlyCols(
-          df, [this.props.apiKey, "Population", "countryRegion"]
-        )
 
         // Update the UI
         this.setState({ "df": df });
@@ -70,46 +55,14 @@ class Countries extends React.Component {
 
     } else {
       // Otherwise show the bar chart
-      let column = this.props.apiKey;
-      let df = this.state.df;
-
-      if (this.props.per100k) {
-        // Show per capita values
-        df.addColumn({
-          column: "derived",
-          value: df[column].mul(100000)
-                           .div(df['Population'])
-        });
-        df = df.drop({
-          "columns": [column],
-          "axis": 1
-        }).rename({
-          "mapper": { "derived": column }
-        });
-      }
-
-      // We'll fill null/NaN's for now so we don't get errors,
-      // but note this could have an effect on averages if we
-      // want to show them later!
-      df = df.fillna({ "values": 0 })
-
-      // Some countries like the US and the UK have data provided
-      // by province/state but not country-wide, so we need to
-      // add this data up by aggregating it
-      // TODO: Add validation to make sure this isn't performed for
-      //  countries which have higher-level data (if it exists)
-      df = df.groupby(["countryRegion"])
-             .col([column])
-             .sum();
-      let mapper = {};
-      mapper[column+"_sum"] = column;
-      df.rename({ "mapper": mapper, "inplace": true });
+      df = df.groupby(["country_code"])
+             .count();
 
       // Sort the values in a descending order
-      df = df.sort_values({ "by": column, "ascending": false })
+      df = df.sort_values({ "by": "country_code_count", "ascending": false })
 
       // Convert to arrays of [[column, value], ...]
-      let valuesOut = utilityFns.getTwoTuples(df, "countryRegion", column);
+      let valuesOut = utilityFns.getTwoTuples(df, "country_code", "country_code_count");
 
       return <>
         <BasicBarChart

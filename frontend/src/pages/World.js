@@ -1,6 +1,6 @@
 import React from "react";
 
-import CovidData from "../data/CovidData";
+import CovidData from "../data/AuthLogData";
 import BasicBarChart from "./BasicBarChart";
 import { CircularProgress } from "@material-ui/core";
 import utilityFns from "./utilityFns";

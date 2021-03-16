@@ -29,42 +29,7 @@ function App() {
         }}>
           <s>L33t HaXiN4</s> Login Attempts
         </h1>
-
-                <World name="Confirmed"
-                       apiKey="confirmed"
-                       per100k={ per100k } />
-                <World name="Recovered"
-                       apiKey="recovered"
-                       color="#5C5" />
-                <World name="Deaths"
-                       apiKey="deaths"
-                       color="orange" />
-                <div style={{
-                  textAlign: "center",
-                  marginTop: "10px"
-                }}>
-                  <FormControlLabel
-                    label="Show Per 100,000 People"
-                    control={ <Checkbox checked={ per100k }
-                                        onChange={(event)=>{
-                                          setPer100k(event.target.checked);
-                                        }}
-                                        color="secondary" /> } />
-                </div>
-                <Countries name="Confirmed"
-                           apiKey="confirmed"
-                           per100k={ per100k } />
-                <Countries name="Recovered"
-                           apiKey="recovered"
-                           per100k={ per100k }
-                           color="#5C5" />
-                <Countries name="Deaths"
-                           apiKey="deaths"
-                           per100k={ per100k }
-                           color="orange" />
-                <StatesProvinces />
-          }[currentTab]
-        }
+        <Countries name="Number Attempts Per Country" />
       </div>
   </>;
 }

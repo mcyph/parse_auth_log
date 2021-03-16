@@ -65,7 +65,8 @@ def get_auth_items():
                     #print(login_events[-1])
 
                 elif "Failed password for" in line:
-                    match = re.search(r"Failed password for (invalid user )?(.*?) from ([0-9.]*?) port ([0-9]+)", line)
+                    match = re.search(r"Failed password for (invalid user )?(.*?) "
+                                      r"from ([0-9.]*?) port ([0-9]+)", line)
                     _, user, ip, port = match.groups()
                     login_events.append(LoginEvents(eventdatetime=dt,
                                                     type=LoginEventTypes.FAILURE,
@@ -75,7 +76,8 @@ def get_auth_items():
                     #print(login_events[-1])
 
                 elif "Failed none for" in line:
-                    match = re.search(r"Failed none for (invalid user )?(.*?) from ([0-9.]*?) port ([0-9]+)", line)
+                    match = re.search(r"Failed none for (invalid user )?(.*?) "
+                                      r"from ([0-9.]*?) port ([0-9]+)", line)
                     _, user, ip, port = match.groups()
                     login_events.append(LoginEvents(eventdatetime=dt,
                                                     type=LoginEventTypes.FAILURE,
@@ -85,7 +87,8 @@ def get_auth_items():
                     #print(login_events[-1])
 
                 elif "Accepted password for" in line:
-                    match = re.search(r"Accepted password for (.*?) from ([0-9.]*?) port ([0-9]+)", line)
+                    match = re.search(r"Accepted password for (.*?) "
+                                      r"from ([0-9.]*?) port ([0-9]+)", line)
                     user, ip, port = match.groups()
                     login_events.append(LoginEvents(eventdatetime=dt,
                                                     type=LoginEventTypes.SUCCESS,
@@ -95,7 +98,8 @@ def get_auth_items():
                     #print(login_events[-1])
 
                 elif "Unable to negotiate with" in line:
-                    match = re.search(r"Unable to negotiate with ([0-9.]*?) port ([0-9]+): no matching key exchange method found.", line)
+                    match = re.search(r"Unable to negotiate with ([0-9.]*?) port ([0-9]+): "
+                                      r"no matching key exchange method found.", line)
                     ip, port = match.groups()
                     login_events.append(LoginEvents(eventdatetime=dt,
                                                     type=LoginEventTypes.FAILURE,

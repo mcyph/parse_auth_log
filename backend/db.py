@@ -1,10 +1,13 @@
 import enum
+import dotenv
+from os import environ
 from sqlalchemy import Enum
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, Integer, String, DateTime, Index
 
 
+dotenv.load_dotenv(override=True)
 Base = declarative_base()
 
 
@@ -73,7 +76,12 @@ Index('other_events_idx',
 
 
 if __name__ == '__main__':
-    engine = create_engine("mysql+mysqlconnector://projectreality:PR2021@127.0.0.1/projectreality?charset=utf8mb4",
+    engine = create_engine(f"mysql+mysqlconnector://"
+                           f"{environ['DB_USER']}:"
+                           f"{environ['DB_PASSWORD']}@"
+                           f"{environ['DB_HOST']}/"
+                           f"{environ['DB_NAME']}?"
+                           f"charset=utf8mb4",
                            echo=True, convert_unicode=True)
     Session = sessionmaker()
     Base.metadata.create_all(engine)
