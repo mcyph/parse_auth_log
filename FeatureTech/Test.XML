@@ -1,0 +1,13 @@
+<submission>
+<username>User</username>
+<name>Tom</name>
+<Team_name>Project Deliverance</Team_name>
+<Tool_name>Demo XML File</Tool_name>
+<Expected_users>3</Expected_users>
+<Process_desc>Testing the XML format</Process_desc>
+<Req_features>You being able to read this</Req_features>
+<Report_req>None</Report_req>
+<Maintenance>Actually building the rest of this</Maintenance>
+<Prev_disc>None</Prev_disc>
+<Stakeholders>Telstra</Stakeholders>
+</submission>

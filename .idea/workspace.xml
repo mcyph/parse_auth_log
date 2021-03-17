@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7424145f-f603-42b0-acc2-3707ab522a87" name="Default Changelist" comment="added various charts: by date, hour, user etc">
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/AuthEvents.js" afterDir="false" />
+    <list default="true" id="7424145f-f603-42b0-acc2-3707ab522a87" name="Default Changelist" comment="added feature tech app">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/data/AuthLogData.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data/AuthLogData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ByDates.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ByDates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ByHour.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ByHour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ByUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ByUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/StatesProvinces.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/World.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +30,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\python\TEST\parse_auth_log" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -80,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615886202204</updated>
-      <workItem from="1615886203328" duration="15701000" />
+      <workItem from="1615886203328" duration="16750000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1615886300236</created>
@@ -110,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615895968829</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added feature tech app">
+      <created>1615984107215</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615984107217</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,13 +121,14 @@
     <MESSAGE value="cleanups and additions to run_server scripts" />
     <MESSAGE value="added use of dotenv and started visualization of countries" />
     <MESSAGE value="added various charts: by date, hour, user etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="added various charts: by date, hour, user etc" />
+    <MESSAGE value="added feature tech app" />
+    <option name="LAST_COMMIT_MESSAGE" value="added feature tech app" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1022" y="373" key="CommitChangelistDialog2" timestamp="1615899237290">
+    <state x="1022" y="373" key="CommitChangelistDialog2" timestamp="1615984974229">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="1022" y="373" key="CommitChangelistDialog2/0.0.3440.1440@0.0.3440.1440" timestamp="1615899237290" />
+    <state x="1022" y="373" key="CommitChangelistDialog2/0.0.3440.1440@0.0.3440.1440" timestamp="1615984974229" />
     <state width="1795" height="373" key="GridCell.Tab.0.bottom" timestamp="1615899475494">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
@@ -152,10 +153,10 @@
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
     <state x="885" y="377" key="SettingsEditor/0.0.3440.1440@0.0.3440.1440" timestamp="1615899182855" />
-    <state x="976" y="465" key="Vcs.Push.Dialog.v2" timestamp="1615895969969">
+    <state x="976" y="465" key="Vcs.Push.Dialog.v2" timestamp="1615984965982">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="976" y="465" key="Vcs.Push.Dialog.v2/0.0.3440.1440@0.0.3440.1440" timestamp="1615895969969" />
+    <state x="976" y="465" key="Vcs.Push.Dialog.v2/0.0.3440.1440@0.0.3440.1440" timestamp="1615984965982" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/parse_auth_log$db.coverage" NAME="db Coverage Results" MODIFIED="1615899192145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
