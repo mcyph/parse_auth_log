@@ -6,3 +6,4 @@ fastapi
 sqlalchemy
 uvicorn
 python-dotenv
+maxminddb-geolite2

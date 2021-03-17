@@ -36,7 +36,7 @@ class LoginEvents(Base):
                (self.id, self.type, self.ip, self.country_code, self.username)
 
 
-Index('login_events_idx',
+Index('logineventsidx',
       LoginEvents.eventdatetime,
       LoginEvents.type,
       LoginEvents.ip,
@@ -69,7 +69,7 @@ class OtherEventsTimeline(Base):
                (self.id, self.type, self.message)
 
 
-Index('other_events_idx',
+Index('othereventsidx',
       OtherEventsTimeline.eventdatetime,
       OtherEventsTimeline.type,
       OtherEventsTimeline.message)

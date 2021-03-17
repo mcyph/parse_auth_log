@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7424145f-f603-42b0-acc2-3707ab522a87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ByDates.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ByHour.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ByUser.js" afterDir="false" />
+    <list default="true" id="7424145f-f603-42b0-acc2-3707ab522a87" name="Default Changelist" comment="added various charts: by date, hour, user etc">
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/AuthEvents.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/data/AuthLogData.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data/AuthLogData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/BasicBarChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/BasicBarChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ByDates.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ByDates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ByHour.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ByHour.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ByUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ByUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Countries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/StatesProvinces.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/World.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +43,35 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RunManager">
+    <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="parse_auth_log" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.db" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615886202204</updated>
-      <workItem from="1615886203328" duration="9496000" />
+      <workItem from="1615886203328" duration="15701000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1615886300236</created>
@@ -72,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615889001415</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added various charts: by date, hour, user etc">
+      <created>1615895968829</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615895968829</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,24 +120,44 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="cleanups and additions to run_server scripts" />
     <MESSAGE value="added use of dotenv and started visualization of countries" />
-    <option name="LAST_COMMIT_MESSAGE" value="added use of dotenv and started visualization of countries" />
+    <MESSAGE value="added various charts: by date, hour, user etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added various charts: by date, hour, user etc" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1022" y="373" key="CommitChangelistDialog2" timestamp="1615889000154">
+    <state x="1022" y="373" key="CommitChangelistDialog2" timestamp="1615899237290">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="1022" y="373" key="CommitChangelistDialog2/0.0.3440.1440@0.0.3440.1440" timestamp="1615889000154" />
+    <state x="1022" y="373" key="CommitChangelistDialog2/0.0.3440.1440@0.0.3440.1440" timestamp="1615899237290" />
+    <state width="1795" height="373" key="GridCell.Tab.0.bottom" timestamp="1615899475494">
+      <screen x="0" y="0" width="3440" height="1440" />
+    </state>
+    <state width="1795" height="373" key="GridCell.Tab.0.bottom/0.0.3440.1440@0.0.3440.1440" timestamp="1615899475494" />
+    <state width="1795" height="373" key="GridCell.Tab.0.center" timestamp="1615899475494">
+      <screen x="0" y="0" width="3440" height="1440" />
+    </state>
+    <state width="1795" height="373" key="GridCell.Tab.0.center/0.0.3440.1440@0.0.3440.1440" timestamp="1615899475494" />
+    <state width="1795" height="373" key="GridCell.Tab.0.left" timestamp="1615899475494">
+      <screen x="0" y="0" width="3440" height="1440" />
+    </state>
+    <state width="1795" height="373" key="GridCell.Tab.0.left/0.0.3440.1440@0.0.3440.1440" timestamp="1615899475494" />
+    <state width="1795" height="373" key="GridCell.Tab.0.right" timestamp="1615899475494">
+      <screen x="0" y="0" width="3440" height="1440" />
+    </state>
+    <state width="1795" height="373" key="GridCell.Tab.0.right/0.0.3440.1440@0.0.3440.1440" timestamp="1615899475494" />
     <state x="1210" y="507" key="RollbackChangesDialog" timestamp="1615886277485">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
     <state x="1210" y="507" key="RollbackChangesDialog/0.0.3440.1440@0.0.3440.1440" timestamp="1615886277484" />
-    <state x="885" y="377" key="SettingsEditor" timestamp="1615888746558">
+    <state x="885" y="377" key="SettingsEditor" timestamp="1615899182855">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="885" y="377" key="SettingsEditor/0.0.3440.1440@0.0.3440.1440" timestamp="1615888746558" />
-    <state x="976" y="465" key="Vcs.Push.Dialog.v2" timestamp="1615889002538">
+    <state x="885" y="377" key="SettingsEditor/0.0.3440.1440@0.0.3440.1440" timestamp="1615899182855" />
+    <state x="976" y="465" key="Vcs.Push.Dialog.v2" timestamp="1615895969969">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="976" y="465" key="Vcs.Push.Dialog.v2/0.0.3440.1440@0.0.3440.1440" timestamp="1615889002538" />
+    <state x="976" y="465" key="Vcs.Push.Dialog.v2/0.0.3440.1440@0.0.3440.1440" timestamp="1615895969969" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/parse_auth_log$db.coverage" NAME="db Coverage Results" MODIFIED="1615899192145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
   </component>
 </project>

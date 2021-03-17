@@ -1,6 +1,6 @@
 import React from "react";
 
-import CovidData from "../data/AuthLogData";
+import AuthLogData from "../data/AuthLogData";
 import BasicBarChart from "./BasicBarChart";
 import { CircularProgress } from "@material-ui/core";
 import flagData from "../data/flagData";
@@ -21,7 +21,7 @@ class Countries extends React.Component {
       // Load the data in the background
       this.setState({ "dfLoading": true });
 
-      CovidData.getLoginEvents().then(df => {
+      AuthLogData.getLoginEvents().then(df => {
 
         // Set the country flag icon properties here
         // so we don't have to do it each time in render()

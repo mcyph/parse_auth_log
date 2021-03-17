@@ -1,7 +1,7 @@
 import * as dfd from "danfojs/src/index";
 import React from "react";
 
-import CovidData from "../data/AuthLogData";
+import AuthLogData from "../data/AuthLogData";
 import BasicBarChart from "./BasicBarChart";
 import { CircularProgress } from "@material-ui/core";
 import flagData from "../data/flagData";
@@ -22,7 +22,7 @@ class ByUser extends React.Component {
       // Load the data in the background
       this.setState({ "dfLoading": true });
 
-      CovidData.getLoginEvents().then(df => {
+      AuthLogData.getLoginEvents().then(df => {
         // Update the UI
         this.setState({ "df": df });
       });

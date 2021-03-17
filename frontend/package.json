@@ -1,6 +1,6 @@
 {
-  "name": "covid_quick_dash",
-  "homepage": "http://mcyph.github.io/covid_quick_dash",
+  "name": "parse_auth_log",
+  "homepage": "http://mcyph.github.io/parse_auth_log",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

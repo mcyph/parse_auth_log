@@ -9,7 +9,7 @@ import PublicIcon from '@material-ui/icons/Public';
 import PhotoSizeSelectSmallIcon from '@material-ui/icons/PhotoSizeSelectSmall';
 
 import './App.css';
-import { World, StatesProvinces, Countries, ByDates, ByHour, ByUser } from "./pages";
+import { World, StatesProvinces, Countries, ByDates, ByHour, ByUser, AuthEvents } from "./pages";
 
 function App() {
   // Get the current page element based on the selected tab
@@ -30,6 +30,7 @@ function App() {
         }}>
           L337 HaX0r Logins
         </h1>
+        <AuthEvents />
         <Countries />
         <ByDates />
         <ByHour />

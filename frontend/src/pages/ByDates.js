@@ -1,7 +1,7 @@
 import * as dfd from "danfojs/src/index";
 import React from "react";
 
-import CovidData from "../data/AuthLogData";
+import AuthLogData from "../data/AuthLogData";
 import BasicBarChart from "./BasicBarChart";
 import { CircularProgress } from "@material-ui/core";
 import flagData from "../data/flagData";
@@ -23,7 +23,7 @@ class ByDates extends React.Component {
       this.setState({ "dfLoading": true });
 
 
-      CovidData.getLoginEvents().then(df => {
+      AuthLogData.getLoginEvents().then(df => {
         df.addColumn({
           column: "date",
           value: df['eventdatetime'].values.map(item => {return item.split('T')[0]})
