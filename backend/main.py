@@ -98,6 +98,16 @@ def get_auth_items():
                                                     username=user))
                     #print(login_events[-1])
 
+                elif "Accepted publickey for" in line:
+                    match = re.search(r"Accepted publickey for (.*?) "
+                                      r"from ([0-9.]*?) port ([0-9]+)", line)
+                    user, ip, port = match.groups()
+                    login_events.append(LoginEvents(eventdatetime=dt,
+                                                    type=LoginEventTypes.SUCCESS,
+                                                    ip=ip,
+                                                    country_code=get_country(ip),
+                                                    username=user))
+
                 elif "Unable to negotiate with" in line:
                     match = re.search(r"Unable to negotiate with ([0-9.]*?) port ([0-9]+): "
                                       r"no matching key exchange method found.", line)
