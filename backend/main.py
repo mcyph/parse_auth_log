@@ -1,4 +1,5 @@
 import re
+from os import environ
 import dateutil.parser
 from geolite2 import geolite2
 
@@ -20,7 +21,7 @@ def get_auth_items():
     login_events = []
     other_events = []
 
-    with open("auth.log", "r", encoding="utf-8", errors="replace") as f:
+    with open(environ["AUTHLOG_PATH"], "r", encoding="utf-8", errors="replace") as f:
         for line in f:
             # Extract the date from the rest of the line
             split_line = line.strip().split(' ')
