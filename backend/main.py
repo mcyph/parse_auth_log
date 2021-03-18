@@ -204,6 +204,8 @@ def get_auth_items():
                 pass
             elif line.startswith("nologin: "):
                 pass
+            elif line.startswith("gdm-launch-environment"):
+                pass
             else:
                 raise Exception("Unhandled line:", line)
 
