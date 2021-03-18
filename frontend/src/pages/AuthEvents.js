@@ -22,12 +22,9 @@ class AuthEvents extends React.Component {
       // Load the data in the background
       this.setState({ "dfLoading": true });
 
-      fetch(process.env.BACKEND_ADDRESS + `/other_events_timeline`)
-             .then(res => res.json())
-             .then(otherEventsTimeline => {
-
+      AuthLogData.getOtherEventsTimeline().then(otherEventsTimeline => {
         // Update the UI
-        this.setState({ "otherEventsTimeline": otherEventsTimeline });
+        this.setState({"otherEventsTimeline": otherEventsTimeline});
       });
     }
   }
