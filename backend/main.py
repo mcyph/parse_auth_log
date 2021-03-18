@@ -146,8 +146,6 @@ def get_auth_items():
                     pass
                 elif "PAM service(sshd) ignoring" in line:
                     pass
-                elif "polkitd(authority=local)" in line:
-                    pass
                 else:
                     raise Exception(line)
 
@@ -181,6 +179,8 @@ def get_auth_items():
                 # OPEN ISSUE: also add sudo/su events to the timeline??
                 pass
             elif line.startswith("chage["):
+                pass
+            elif line.startswith("polkitd(authority=local)"):
                 pass
             else:
                 raise Exception("Unhandled line:", line)
