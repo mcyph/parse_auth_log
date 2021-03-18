@@ -120,7 +120,7 @@ def get_auth_items():
                     pass
                 elif "pam_unix(sshd:session):" in line:
                     pass
-                elif "more authentication failures" in line:
+                elif "more authentication failure" in line:
                     pass
                 elif "error: kex_exchange_identification:" in line:
                     # Probably other end terminated connection
