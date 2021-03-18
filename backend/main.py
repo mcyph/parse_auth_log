@@ -146,6 +146,8 @@ def get_auth_items():
                     pass
                 elif "PAM service(sshd) ignoring" in line:
                     pass
+                elif "polkitd(authority=local)" in line:
+                    pass
                 else:
                     raise Exception(line)
 
