@@ -154,6 +154,8 @@ def get_auth_items():
                     pass
                 elif "Failed to release session" in line:
                     pass
+                elif "error: connect_to" in line:
+                    pass
                 else:
                     raise Exception(line)
 
