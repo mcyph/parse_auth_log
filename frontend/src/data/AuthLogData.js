@@ -6,7 +6,7 @@ class AuthLogData {
    **************************************************/
 
   getLoginEvents=(key)=>{
-    return dfd.read_json(`http://127.0.0.1:9779/login_events`);
+    return dfd.read_json(process.env.BACKEND_ADDRESS + `/login_events`);
   }
 }
 

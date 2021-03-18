@@ -22,7 +22,7 @@ class AuthEvents extends React.Component {
       // Load the data in the background
       this.setState({ "dfLoading": true });
 
-      fetch(`http://127.0.0.1:9779/other_events_timeline`)
+      fetch(process.env.BACKEND_ADDRESS + `/other_events_timeline`)
              .then(res => res.json())
              .then(otherEventsTimeline => {
 
