@@ -152,8 +152,6 @@ def get_auth_items():
                     pass
                 elif "cannot listen to port" in line:
                     pass
-                elif line.startswith("nologin: "):
-                    pass
                 else:
                     raise Exception(line)
 
@@ -201,6 +199,8 @@ def get_auth_items():
             elif line.startswith("polkit-agent-helper-1["):
                 pass
             elif line.startswith("dbus-daemon["):
+                pass
+            elif line.startswith("nologin: "):
                 pass
             else:
                 raise Exception("Unhandled line:", line)
