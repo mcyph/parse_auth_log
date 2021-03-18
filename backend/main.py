@@ -125,6 +125,8 @@ def get_auth_items():
                 elif "error: kex_exchange_identification:" in line:
                     # Probably other end terminated connection
                     pass
+                elif "maximum authentication attempts exceeded" in line:
+                    pass
                 elif "Connection reset by" in line:
                     pass
                 else:
