@@ -89,7 +89,7 @@ if __name__ == '__main__':
     Session.configure(bind=engine)
     session = Session()
 
-    from backend.main import get_auth_items
+    from main import get_auth_items
     login_events, other_events = get_auth_items()
 
     for login_event in login_events:
