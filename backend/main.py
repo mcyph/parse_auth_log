@@ -170,6 +170,14 @@ def get_auth_items():
                 other_events.append(OtherEventsTimeline(eventdatetime=dt,
                                                         type=OtherEventTypes.USERMOD,
                                                         message=line))
+            elif line.startswith('gpasswd['):
+                # e.g. 138226]: user pulse added by root to group audio
+                if ' to group ' in line:
+                    other_events.append(OtherEventsTimeline(eventdatetime=dt,
+                                                            type=OtherEventTypes.GROUP_ADD,
+                                                            message=line))
+                else:
+                    raise Exception(line)
 
             elif line.startswith('CRON['):
                 pass
