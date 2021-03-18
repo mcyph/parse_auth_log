@@ -148,6 +148,8 @@ def get_auth_items():
                     pass
                 elif "Address already in use" in line:
                     pass
+                elif "cannot listen to port" in line:
+                    pass
                 else:
                     raise Exception(line)
 
