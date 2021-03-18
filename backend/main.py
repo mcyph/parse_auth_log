@@ -110,7 +110,7 @@ def get_auth_items():
 
                 elif "Unable to negotiate with" in line:
                     match = re.search(r"Unable to negotiate with ([0-9.]*?) port ([0-9]+): "
-                                      r"no matching key exchange method found.", line)
+                                      r"no matching", line)
                     if not match:
                         raise Exception(line)
                     ip, port = match.groups()
