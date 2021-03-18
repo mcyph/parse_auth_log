@@ -1,3 +1,4 @@
+from os import environ
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine
@@ -15,7 +16,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-engine = create_engine("mysql+mysqlconnector://projectreality:PR2021@127.0.0.1/projectreality?charset=utf8mb4",
+engine = create_engine(f"mysql+mysqlconnector://"
+                       f"{environ['DB_USER']}:"
+                       f"{environ['DB_PASSWORD']}@"
+                       f"{environ['DB_HOST']}/"
+                       f"{environ['DB_NAME']}?"
+                       f"charset=utf8mb4",
                        echo=True, convert_unicode=True)
 Session = sessionmaker()
 Session.configure(bind=engine)
