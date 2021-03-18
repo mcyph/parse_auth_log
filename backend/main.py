@@ -132,6 +132,8 @@ def get_auth_items():
                     pass
                 elif "Connection reset by" in line:
                     pass
+                elif "PAM service(sshd) ignoring" in line:
+                    pass
                 else:
                     raise Exception(line)
 
