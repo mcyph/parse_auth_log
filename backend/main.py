@@ -152,6 +152,8 @@ def get_auth_items():
                     pass
                 elif "cannot listen to port" in line:
                     pass
+                elif line.startswith("nologin: "):
+                    pass
                 else:
                     raise Exception(line)
 
