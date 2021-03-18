@@ -125,6 +125,8 @@ def get_auth_items():
                 elif "Disconnecting authenticating user" in line:
                     # OPEN ISSUE: Send a notification??
                     pass
+                elif "Disconnecting invalid user" in line:
+                    pass
                 elif "error: kex_exchange_identification:" in line:
                     # Probably other end terminated connection
                     pass
