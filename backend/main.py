@@ -182,6 +182,8 @@ def get_auth_items():
                 pass
             elif line.startswith("polkitd(authority=local)"):
                 pass
+            elif line.startswith("polkit-agent-helper-1["):
+                pass
             else:
                 raise Exception("Unhandled line:", line)
 
